@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="background-image:url('{% static 'img/mt-1185-header-bg.jpg' %}');background-position:top;background-repeat:no-repeat;background-size:cover;" data-bg-image="2017/09/mt-1185-header-bg02.jpg" data-bg-position="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <h1 class="moto-text_system_5">Booking Successfull</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info justify-content-center">
+        	
+        </div>
+        <div class="row block-9 justify-content-center mb-5">
+          <div class="col-md-8 mb-md-5">
+          	<h1>Booking Has Been Sucesfully download receipt</h1>
+              <!-- <p>Thank you, {{ booking.user.username }}! Your booking for {{ booking.seat.bus.name }} has been confirmed.</p>
+              <p>Seat Number: {{ booking.seat.seat_number }}</p>
+              <p>Route: {{ booking.route.departure_city }} to {{ booking.route.arrival_city }}</p>
+              <p>Receipt Number: {{ booking.receipt_number }}</p> -->
+                        
+
+            
+          
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+{% endblock %}

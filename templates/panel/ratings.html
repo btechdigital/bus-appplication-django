@@ -1,0 +1,137 @@
+{% extends 'panel/admin-base.html'%}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">View All Ratings</h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Rate Our Service</h6>
+                </div>
+                <form action="" method="post">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.title.label_tag }}*
+                                {% if form.title.errors %}
+                                <div class="text-danger">{{ form.title.errors }}</div>
+                                {% endif %}
+                                {% render_field form.title class+="form-control" %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.rating.label_tag }}*
+                                <span class="badge badge-info">Rating is from 1-5</span>
+                                {% if form.rating.errors %}
+                                <div class="text-danger">{{ form.rating.errors }}</div>
+                                {% endif %}
+                                {% render_field form.rating class+="form-control" %}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{ form.message.label_tag }}*
+                                {% if form.message.errors %}
+                                <div class="text-danger">{{ form.message.errors }}</div>
+                                {% endif %}
+                                {% render_field form.message class+="form-control" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% csrf_token %}
+                <div class="card">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <p>Please fix the following errors:</p>
+                        <ul>
+                            {% for field in form %}
+                            {% if field.errors %}
+                            {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                            {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+                            {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+                <button class="btn btn-primary btn-block btn-lg login-btn w-100" type="submit">Add Rating</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <!-- Collapsable Card Example -->
+            <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <h6 class="m-0 font-weight-bold text-primary">Rating List</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="collapseCardExample">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Ratings</th>
+                                        <th>Date Created</th>
+                                        <th>Message</th>
+                                        <th>Approved</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Ratings</th>
+                                        <th>Date Created</th>
+                                        <th>Message</th>
+                                        <th>Approved</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    {% if my_reveiw %}
+                                    {% for b in my_reveiw %}
+                                    <tr>
+                                        <td>{{forloop.counter}}</td>
+                                        <td>{{b.title}}</td>
+                                        <td>{{b.rating}}</td>
+                                        <td>{{b.created_at}}</td>
+                                        <td>{{b.message}}</td>
+                                        <td>{{b.is_approved}}</td>
+                                        <td><span class="badge badge-primary">print</span></td>
+                                        <td><span class="badge badge-danger">print</span></td>
+                                    </tr>
+                                    {% endfor %}
+                                    {% else %}
+                                    <td>No Booking Yet</td>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- DataTales Example -->
+</div>
+{% endblock %}

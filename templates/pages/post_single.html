@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="background-image:url('{% static 'img/mt-1185-header-bg.jpg' %}');background-position:top;background-repeat:no-repeat;background-size:cover;" data-bg-image="2017/09/mt-1185-header-bg02.jpg" data-bg-position="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <h1 class="moto-text_system_5">Blog</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="" data-bg-position="left top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed" data-widget="row" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-cell col-sm-9 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column" style="" data-bg-position="left top">
+                                <div data-widget-id="wid__blog_post_name__5c23e8310086e" class="moto-widget moto-widget-blog-post_name moto-preset-default moto-align-left moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-preset="default" data-widget="blog.post_name">
+                                    <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa">
+                                        <div class="moto-widget-text-content moto-widget-text-editable">
+                                            <h1 class="moto-text_system_6">{{post.title}}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-grid-type="sm" class="moto-widget moto-widget-row row-gutter-0" data-widget="row" style="" data-bg-position="left top">
+                                    <div class="container-fluid">
+                                        <div class="row" data-container="container">
+                                            <div class="moto-cell col-sm-3 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column" style="" data-bg-position="left top">
+                                                <div data-widget-id="wid__blog_post_published_on__5c23e83100fb2" class="moto-widget moto-widget-blog-post_published_on moto-preset-default moto-align-left moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto " data-preset="default" data-widget="blog.post_published_on" data-spacing="aasa">
+                                                    <div class="moto-text_system_11">
+                                                        <span class="fa fa-calendar moto-widget-blog-post_published_on-icon"></span><span class="moto-widget-blog-post_published_on-date">
+                                                            {{post.created_at}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="moto-cell col-sm-3 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column" style="" data-bg-position="left top">
+                                                <div data-widget-id="wid__blog_post_author__5c23e831016ca" class="moto-widget moto-widget-blog-post-author moto-preset-default moto-align-left moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto " data-widget="blog.post_author" data-preset="default">
+                                                    <div class="moto-text_system_11">
+                                                        <span class="fa fa-user moto-widget-blog-post-author-icon"></span><span class="moto-widget-blog-post-author-text">{{post.user}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-6 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                                <div data-widget-id="wid_1545857217_khofb7kr4" class="moto-widget moto-widget-blog-post_category moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto moto-align-left " data-widget="blog.post_category">
+                                                    <div class="moto-text_224">
+                                                        <a href="">
+                                                            <span class="fa fa-folder moto-widget-blog-post_category-icon" aria-hidden="true"></span><span class="moto-widget-blog-post_category-text">{{post.category}}</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-widget-id="wid__spacer__5c23e83101cd3" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto " data-widget="spacer" data-preset="default" data-spacing="aaaa" data-visible-on="+desktop,tablet,mobile-h,mobile-v">
+                                    <div class="moto-widget-spacer-block" style="height:10px"></div>
+                                </div>
+                                <div data-widget-id="wid__social_buttons__5c23e8310230b" class="moto-widget moto-widget-social-buttons moto-preset-default moto-align-left moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto " data-widget="social_buttons" data-preset="default" data-spacing="aasa">
+                                    <ul class="social-buttons-list">
+                                        <li class="social-button" data-name="facebook_share" data-provider="facebook">
+                                            <div class="fb-share-button" data-href="https://template64212.motopreview.com/blog/the-most-common-mistakes-when-managing-personal-finances/" data-layout="button_count" moto-dependency-require="facebook"></div>
+                                        </li>
+                                        <li class="social-button" data-name="twitter_tweet" data-provider="twitter"><a href="https://template64212.motopreview.com/blog/the-most-common-mistakes-when-managing-personal-finances/" class="twitter-share-button" moto-dependency-require="twitter"></a></li>
+                                        <li class="social-button" data-name="linkedIn_share" data-provider="linkedin"><span type="IN/Share" data-url="https://template64212.motopreview.com/blog/the-most-common-mistakes-when-managing-personal-finances/" data-counter="right" moto-dependency-require="linkedin"></span></li>
+                                    </ul>
+                                </div>
+                                <div data-widget-id="wid__spacer__5c23e831029d7" class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto " data-widget="spacer" data-preset="default" data-spacing="aaaa" data-visible-on="+desktop,tablet,mobile-h,mobile-v">
+                                    <div class="moto-widget-spacer-block" style="height:10px"></div>
+                                </div>
+                                <div data-widget-id="wid__blog_post_content__5c23e83102cf2" class="moto-widget moto-widget-blog-post_content moto-preset-default  moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="blog.post_content">
+                                    <section id="section-content" class="content page-27 moto-section" data-widget="section" data-container="section">
+                                        <div class="moto-widget moto-widget-row" data-widget="row" data-draggable-disabled="" style="" data-bg-position="left top">
+                                            <div class="container-fluid">
+                                                <div class="row" data-container="container">
+                                                    <div class="moto-cell col-sm-12 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column" style="" data-bg-position="left top">
+                                                        <div data-widget-id="wid__image__5c23ea6245cc9" class="moto-widget moto-widget-image moto-widget_with-deferred-content moto-preset-default moto-align-center moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                                                            <span class="moto-widget-image-link">
+                                                                <img data-src="{{post.image.url}}" src="data:{{post.image.url}}" class="moto-widget-image-picture moto-widget-deferred-content lazyload" data-id="208" title="" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="sala" data-draggable-disabled="">
+                                                            <div class="moto-widget-text-content moto-widget-text-editable">
+                                                                <p class="moto-text_normal">{{post.content|safe}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div data-widget-id="wid_1545857395_olkvnex9n" class="moto-widget moto-widget-blog-post_tags moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="blog.post_tags" data-preset="default">
+                                    <div class="moto-widget-blog-post_tags__content-wrapper">
+                                        <ul class="moto-widget-blog-post_tags__items moto-align-items_bottom">
+                                            <li class="moto-widget-blog-post_tags__title moto-text_normal">Tags:</li>
+                                            {% if post.tags.all %}
+                                            {% for t in post.tags.all %}
+                                            <li class="moto-widget-blog-post_tags__item"><a href="{% url 'post_by_tag' t.name %}" class="moto-widget-blog-post_tags__item-link"><span class="moto-widget-blog-post_tags__item-text">{{t.name}}</span></a></li>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="moto-cell col-sm-3 moto-widget moto-widget-row__column" data-container="container" data-widget="row.column" style="" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="sasa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <p class="moto-text_system_6">CATEGORIES</p>
+                                    </div>
+                                </div>
+                                <div data-widget-id="wid_1545857078_o1ld1iz1g" class="moto-widget moto-widget-blog-category_list moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto moto-align-left  moto-widget-blog-category_list_show-delimiter moto-widget-blog-category_list_no-icon moto-widget_flex-alignment" data-widget="blog.category_list" data-preset="default">
+                                    <div class="moto-widget-blog-category_list__content-wrapper">
+                                        <ul class="moto-widget-blog-category_list__items">
+                                            {% if category_list %}
+                                            {% for c in category_list %}
+                                            <li class="moto-widget-blog-category_list__item"><a href="{% url 'post_by_category' c.name %}" class="moto-widget-blog-category_list__item-link moto-widget__flex-alignment-element"><span class="moto-widget-blog-category_list__item-text">{{c.name}}</span></a></li>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="sasa" data-visible-on="-" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <p class="moto-text_system_6">TAG LIST</p>
+                                    </div>
+                                </div>
+                                <div id="wid_1605786774_ezpabe5yv" class="moto-widget moto-widget-blog-tag_list moto-widget-blog-post_tags moto-preset-2 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="blog.tag_list" data-preset="2">
+                                    <div class="moto-widget-blog-post_tags__content-wrapper">
+                                        <ul class="moto-widget-blog-post_tags__items moto-align-items_bottom">
+                                            {% if tags %}
+                                            {% for t in tags %}
+                                            <li class="moto-widget-blog-post_tags__item"><a href="{% url 'post_by_tag' t.name %}" class="moto-widget-blog-post_tags__item-link"><span class="moto-widget-blog-post_tags__item-text">{{t.name}}</span></a></li>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div data-widget-id="wid__blog_recent_posts__5c23e831043ba" class="moto-widget moto-widget-blog-recent_posts moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto " data-widget="blog.recent_posts">
+                                    <div class="moto-widget-blog-recent_posts-title">
+                                        <div class="moto-widget moto-widget-text moto-preset-default moto-align-left  moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-preset="default" data-spacing="aasa">
+                                            <div class="moto-widget-text-content moto-widget-text-editable">
+                                                <p class="moto-text_system_6">RECENT POSTS</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="moto-widget moto-widget-row" data-widget="row">
+                                        <div class="container-fluid">
+                                            <div class="row moto-widget-blog-recent_posts-list">
+                                                {% if post_list %}
+                                                {% for post in post_list %}
+                                                <div class="moto-cell col-sm-12 moto-widget-blog-recent_posts-item">
+                                                    <div class="moto-widget-blog-recent_posts-item__content  moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto">
+                                                        <div class="moto-widget-blog-recent_posts-item-preview">
+                                                            <div data-widget-id="wid__image__66cd265247281" class="moto-widget moto-widget-image moto-widget_with-deferred-content moto-preset-default moto-align-left moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                                                                <a href="{% url 'post_single' post.slug %}" data-action="url" class="moto-widget-image-link moto-link">
+                                                                    <img data-src="{{post.image.url}}" src="data:{{post.image.url}}" class="moto-widget-image-picture moto-widget-deferred-content lazyload" data-id="" title="" alt="">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="moto-widget-blog-recent_posts-item-title">
+                                                            <div class="moto-widget moto-widget-text moto-align-left  moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-preset="default" data-spacing="aasa">
+                                                                <div class="moto-widget-text-content moto-widget-text-editable">
+                                                                    <h2 class="blog-post-title moto-text_system_2">
+                                                                        <a href="{% url 'post_single' post.slug %}">{{post.title}}</a>
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static 'images/bg_2.jpg'%}');" >
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Buses <i class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">{{bus.name}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info justify-content-center">
+        	<div class="col-md-8">
+        		<h1>Book a Seat on {{ bus.name }}</h1>
+  				<h2>Route: {{ route.departure_city }} to {{ route.arrival_city }}</h2>
+          </div>
+        </div>
+        <div class="row block-9 justify-content-center mb-5">
+          <div class="col-md-8 mb-md-5">
+          	<h1>Booking Confirmation</h1>
+              <p>Thank you, {{ booking.user.username }}! Your booking for {{ booking.seat.bus.name }} has been confirmed.</p>
+              <p>Seat Number: {{ booking.seat.seat_number }}</p>
+              <p>Route: {{ booking.route.departure_city }} to {{ booking.route.arrival_city }}</p>
+              <p>Receipt Number: {{ booking.receipt_number }}</p>
+                        
+
+            
+          
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+{% endblock %}

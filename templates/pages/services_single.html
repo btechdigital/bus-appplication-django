@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="background-image:url('{% static 'img/mt-1185-header-bg.jpg' %}');background-position:top;background-repeat:no-repeat;background-size:cover;" data-bg-image="2017/09/mt-1185-header-bg02.jpg" data-bg-position="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <h1 class="moto-text_system_5">{{services.title}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="" data-draggable-disabled="" data-bg-position="left top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="moto-cell col-sm-12" data-container="container">
+                            <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-draggable-disabled="" data-bg-position="left top">
+                                <div class="container-fluid">
+                                    <div class="row" data-container="container">
+                                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="" data-draggable-disabled="">
+                                                <div class="moto-widget-text-content moto-widget-text-editable">
+                                                    <p class="moto-text_system_9">{{services.title}}</p>
+                                                    <p class="moto-text_normal">{{services.description|safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+{% endblock %}

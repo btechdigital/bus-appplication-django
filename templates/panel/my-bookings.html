@@ -1,0 +1,71 @@
+{% extends 'panel/admin-base.html'%}
+{% block content %}
+  <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">View All Bookings</h1>
+                    
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">My Bookings</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Destination</th>
+                                            <th>Seat No</th>
+                                            <th>Booking date</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th>Receipt No</th>
+                                            <th>Print Receipt</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Destination</th>
+                                            <th>Seat No</th>
+                                            <th>Booking date</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th>Receipt No</th>
+                                            <th>Print Receipt</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    	{% if my_booking %}
+                                    	{% for b in my_booking %}
+                                        <tr>
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{b.user.first_name}}  {{b.user.last_name}}</td>
+                                            <td>{{b.route}}</td>
+                                            <td>{{b.seat}}</td>
+                                            <td>{{b.booking_date}}</td>
+                                            <td>{{b.route.price}}</td>
+                                            <td>{{b.payment_status}}</td>
+                                            <td>{{b.receipt_number}}</td>
+                                            <td><span class="badge badge-primary">print</span></td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %}
+                                        <td>No Booking Yet</td>
+                                        {% endif %}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load allauth account %}
+{% block content %}
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static 'images/bg_2.jpg'%}');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Account <i class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">{% block head_title %}
+                    {% translate "Sign In" %}
+                    {% endblock head_title %}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+{% element h1 %}
+{% translate "Enter Sign-In Code" %}
+{% endelement %}
+{% setvar email_link %}
+<a href="mailto:{{ email }}">{{ email }}</a>
+{% endsetvar %}
+{% element p %}
+{% blocktranslate %}We’ve sent a code to {{ email_link }}. The code expires shortly, so please enter it soon.{% endblocktranslate %}
+{% endelement %}
+{% url 'account_confirm_login_code' as login_url %}
+{% element form form=form method="post" action=login_url tags="entrance,login" %}
+{% slot body %}
+{% csrf_token %}
+{% element fields form=form unlabeled=True %}
+{% endelement %}
+{{ redirect_field }}
+{% endslot %}
+{% slot actions %}
+{% element button type="submit" tags="prominent,login" %}
+{% translate "Sign In" %}
+{% endelement %}
+{% endslot %}
+{% endelement %}
+{% element h2 %}
+{% url 'account_login' as login_url %}
+{% element button href=login_url tags="link" %}
+{% translate "Other sign-in options" %}
+{% endelement %}
+{% endelement %}
+{% endblock content %}

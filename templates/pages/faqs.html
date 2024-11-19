@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="background-image:url('{% static 'img/mt-1185-header-bg.jpg' %}');background-position:top;background-repeat:no-repeat;background-size:cover;" data-bg-image="2017/09/mt-1185-header-bg02.jpg" data-bg-position="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <h1 class="moto-text_system_5">Frequent Ask Questions</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="" data-bg-position="left top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-8 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aasa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <h2 class="moto-text_system_6">YOUR QUESTIONS ANSWERED</h2>
+                                    </div>
+                                </div>
+                                {% if faqs %}
+                                
+                                <div class="accordion mb-4 p-5" id="accordionExample">
+                                    {% for f in faqs %}
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="heading{{f.pk}}">
+                                            <button style="font-size:19px; color:brown; font-style: capitalize-case;" class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{f.pk}}" aria-expanded="true" aria-controls="collapse{{f.pk}}">
+                                                {{f.question}}
+                                            </button>
+                                        </h2>
+                                        <div id="collapse{{f.pk}}" class="accordion-collapse collapse hide" aria-labelledby="heading{{f.pk}}" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p style="font-size:18px">{{f.answer}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      {% endfor %}
+                                </div>
+                              
+                                {% else %}
+                                <h3>No Item</h3>
+                                {% endif %}
+
+                                <div class="moto-widget moto-widget-row__column moto-cell col-sm-4 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

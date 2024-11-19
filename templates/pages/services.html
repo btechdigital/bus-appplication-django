@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="background-image:url('{% static 'img/mt-1185-header-bg.jpg' %}');background-position:top;background-repeat:no-repeat;background-size:cover;" data-bg-image="2017/09/mt-1185-header-bg02.jpg" data-bg-position="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                    <div class="moto-widget-text-content moto-widget-text-editable">
+                                        <h1 class="moto-text_system_5">{{services.title}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="" data-bg-position="left top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="moto-cell col-sm-12" data-container="container">
+                            <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                                <div class="container-fluid">
+                                    <div class="row" data-container="container">
+                                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                                <div class="moto-widget-text-content moto-widget-text-editable">
+                                                    <h2 style="text-align: center;" class="moto-text_system_6">OUR SERVICES</h2>
+                                                </div>
+                                            </div>
+                                            <div data-widget-id="wid__divider_horizontal__5a33bc43a1210" class="moto-widget moto-widget-divider moto-preset-default moto-align-center moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="divider_horizontal" data-preset="default">
+                                                <hr class="moto-widget-divider-line" style="max-width:100%;width:5%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                                <div class="container-fluid">
+                                    <div class="row" data-container="container">
+                                        {% if service%}
+                                        {% for s in service%}
+                                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-4 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                            <div data-widget-id="wid__image__5a33bc43a18d5" class="moto-widget moto-widget-image moto-widget_with-deferred-content moto-preset-default moto-align-center moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                                                <span class="moto-widget-image-link">
+                                                    <img data-src="{{s.image.url}}"  class="moto-widget-image-picture moto-widget-deferred-content lazyload" data-id="155" title="" alt="">
+                                                </span>
+                                            </div>
+                                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto" data-widget="text" data-preset="default" data-spacing="aasa" data-animation="">
+                                                <div class="moto-widget-text-content moto-widget-text-editable">
+                                                    <h3 class="moto-text_system_9"><a target="_self" data-action="url" class="moto-link" href="{% url 'services_single' s.slug %}">{{s.title}}</a></h3>
+                                                    <div class="moto-text_normal"><p>{{ s.description|custom_truncate:100 }}</p></div>
+                                                </div>
+                                            </div>
+                                            <div data-widget-id="wid__button__5a33bc43a1b61" class="moto-widget moto-widget-button moto-preset-5 moto-preset-provider-default moto-align-left moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="button">
+                                                <a href="{% url 'services_single' s.slug %}" data-action="page" class="moto-widget-button-link moto-size-medium moto-link"><span class="fa moto-widget-theme-icon"></span><span class="moto-widget-button-divider"></span><span class="moto-widget-button-label">LEARN MORE</span></a>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        {% endif %}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endblock %}

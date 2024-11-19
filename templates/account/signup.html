@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load allauth i18n %}
+{% block content %}
+<style>
+    input[type=text], input[type=password], input[type=email],input[type=date],input[type=file],#id_identity_document {
+    height: 50px;
+    border-radius:5px;
+    padding: 14px 12px ;
+    border: 1px solid #ccc;
+    width:100%;
+    focus:none;
+    margin: 10px 0px !important;
+}
+  focus: input[type=text], input[type=password], input[type=email] {
+            
+        }
+
+  select{
+    border-radius:5px !important
+ }
+ option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style the selected option */
+option:checked {
+    background-color: #007bff;
+    color: white;
+}
+
+label{
+    padding:10px 0px;
+    font-size:1em;
+    margin: 10px 0px !important;
+    
+}
+ button[type=submit]{
+    height: 50px;
+    border-radius:5px;
+    padding: 14px 12px ;
+    border: 1px solid #ccc;
+    width:40%;
+    background-color: #ff514e;
+    color: white;
+ }
+
+
+</style>
+{% include 'patials/hero.html'%}
+
+
+<div class="moto-widget moto-widget-block moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto" data-widget="block" data-spacing="lala" style="" data-bg-position="left top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="moto-cell col-sm-12" data-container="container">
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                               
+                                <div data-widget-id="wid__divider_horizontal__5a33bc43a1210" class="moto-widget moto-widget-divider moto-preset-default moto-align-center moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="divider_horizontal" data-preset="default">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                    <div class="container-fluid">
+                        <div class="row" data-container="container">
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-6 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <div data-widget-id="wid__image__5a33bc43a144d" class="moto-widget moto-widget-image moto-widget_with-deferred-content moto-preset-default moto-align-center moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  " data-widget="image">
+                                    <span class="moto-widget-image-link">
+                                        <img src="https://pathivu.dreamstechnologies.com/template/assets/img/login-banner.jpg" class="" alt="Login Banner" style="height:500px; width:500px;overflow:hidden; margin-top:40px">
+                                    </span>
+                                </div>
+                                
+                               
+                            </div>
+                            <div class="moto-widget moto-widget-row__column moto-cell col-sm-6 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto" style="" data-widget="row.column" data-container="container" data-spacing="aaaa" data-bg-position="left top">
+                                <h5 class="moto-text_system_9" style="margin-bottom: 30px;">Register For An Account</h5>
+                                
+                                <form method="post" action="{% url 'account_signup' %}" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.first_name.label_tag }}*
+                                                {% if form.first_name.errors %}
+                                                <div class="text-danger">{{ form.first_name.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.first_name class+="form-control" %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.last_name.label_tag }}*
+                                                {% if form.last_name.errors %}
+                                                <div class="text-danger">{{ form.last_name.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.last_name class+="form-control" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.email.label_tag }}*
+                                                {% if form.email.errors %}
+                                                <div class="text-danger">{{ form.email.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.email class+="form-control" %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.phone.label_tag }}*
+                                                {% if form.phone.errors %}
+                                                <div class="text-danger">{{ form.phone.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.phone class+="form-control" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.identity_document.label_tag }}*
+                                                {% if form.identity_document.errors %}
+                                                <div class="text-danger">{{ form.identity_document.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.identity_document class+="form-control" %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.part_no.label_tag }}*
+                                                {% if form.part_no.errors %}
+                                                <div class="text-danger">{{ form.part_no.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.part_no class+="form-control" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.dob.label_tag }}*
+                                                {% if form.dob.errors %}
+                                                <div class="text-danger">{{ form.dob.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.dob class+="form-control" %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.profile_pic.label_tag }}*
+                                                {% if form.profile_pic.errors %}
+                                                <div class="text-danger">{{ form.profile_pic.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.profile_pic class+="form-control" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.password1.label_tag }}*
+                                                {% if form.password1.errors %}
+                                                <div class="text-danger">{{ form.password1.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.password1 class+="form-control" %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form.password2.label_tag }}*
+                                                {% if form.password2.errors %}
+                                                <div class="text-danger">{{ form.password2.errors }}</div>
+                                                {% endif %}
+                                                {% render_field form.password2 class+="form-control" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% csrf_token %}
+                                    <div class="card">
+                                        {% if form.errors %}
+                                        <div class="alert alert-danger">
+                                            <p>Please fix the following errors:</p>
+                                            <ul>
+                                                {% for field in form %}
+                                                {% if field.errors %}
+                                                {% for error in field.errors %}
+                                                <li>{{ field.label }}: {{ error }}</li>
+                                                {% endfor %}
+                                                {% endif %}
+                                                {% endfor %}
+                                                {% if form.non_field_errors %}
+                                                {% for error in form.non_field_errors %}
+                                                <li>{{ error }}</li>
+                                                {% endfor %}
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="text-end">
+                                        <a class="forgot-link" href="{% url 'account_login' %}">Already have an account?</a>
+                                    </div>
+                                    <button class="btn btn-primary btn-block btn-lg login-btn w-100" type="submit">Signup</button>
+                                </form>
+
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
